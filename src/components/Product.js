@@ -3,7 +3,27 @@ import React from "react";
 // CSS
 import "../assets/css/Product.css";
 
-function Product({ title, img, price, rating }) {
+// Context API
+import { useStateValue } from "../state/StateProvider";
+import ADD_TO_BASKET from "../state/actions";
+
+function Product({ id, title, img, price, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const addToBasket = () => {
+    // dispatches the product into the dataLayer
+    dispatch({
+      type: ADD_TO_BASKET,
+      item: {
+        id,
+        title,
+        img,
+        price,
+        rating,
+      },
+    });
+  };
+
   return (
     <div className="product">
       <div className="product__info">
@@ -21,7 +41,7 @@ function Product({ title, img, price, rating }) {
         </div>
       </div>
       <img src={img} alt="" />
-      <button>Add to Basket</button>
+      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }
