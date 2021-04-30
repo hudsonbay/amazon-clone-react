@@ -6,14 +6,30 @@ import checkoutAd from "../assets/img/checkout_ad.jpg";
 
 // Components
 import Subtotal from "../components/Subtotal";
+import CheckoutProduct from "../components/CheckoutProduct";
+
+// Context API
+import { useStateValue } from "../state/StateProvider";
 
 function Checkout() {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="checkout">
       <div className="checkout__left">
         <img className="checkout__ad" src={checkoutAd} alt="" />
         <div>
           <h2 className="checkout__title">Your shopping basket</h2>
+          {basket.map((item, index) => (
+            <CheckoutProduct
+              key={index}
+              id={item.id}
+              title={item.title}
+              img={item.img}
+              price={item.price}
+              rating={item.rating}
+            />
+          ))}
         </div>
       </div>
 
