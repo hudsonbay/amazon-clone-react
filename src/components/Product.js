@@ -5,7 +5,7 @@ import "../assets/css/Product.css";
 
 // Context API
 import { useStateValue } from "../state/StateProvider";
-import ADD_TO_BASKET from "../state/actions";
+import { ADD_TO_BASKET } from "../state/actions";
 
 function Product({ id, title, price, img, rating }) {
   const [{ basket }, dispatch] = useStateValue();

@@ -5,7 +5,7 @@ import "../assets/css/CheckoutProduct.css";
 
 // Context API
 import { useStateValue } from "../state/StateProvider";
-import REMOVE_FROM_BASKET from "../state/actions";
+import { REMOVE_FROM_BASKET } from "../state/actions";
 
 function CheckoutProduct({ id, title, price, img, rating }) {
   const [{ basket }, dispatch] = useStateValue();
