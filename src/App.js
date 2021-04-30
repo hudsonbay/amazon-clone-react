@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <Header />
         <Switch>
-          <Header />
           <Route path="/checkout">
             <Checkout />
           </Route>
