@@ -14,33 +14,14 @@ function Home() {
 
         <div className="home__row">
           <Product
+            id={1}
             title="Home Grinder"
             price={29.99}
             img={imgProduct}
             rating={5}
           />
           <Product
-            title="Home Grinder"
-            price={29.99}
-            img={imgProduct}
-            rating={5}
-          />
-        </div>
-
-        <div className="home__row">
-          <Product
-            title="Home Grinder"
-            price={29.99}
-            img={imgProduct}
-            rating={5}
-          />
-          <Product
-            title="Home Grinder"
-            price={29.99}
-            img={imgProduct}
-            rating={5}
-          />
-          <Product
+            id={2}
             title="Home Grinder"
             price={29.99}
             img={imgProduct}
@@ -50,6 +31,31 @@ function Home() {
 
         <div className="home__row">
           <Product
+            id={3}
+            title="Home Grinder"
+            price={29.99}
+            img={imgProduct}
+            rating={5}
+          />
+          <Product
+            id={4}
+            title="Home Grinder"
+            price={29.99}
+            img={imgProduct}
+            rating={5}
+          />
+          <Product
+            id={5}
+            title="Home Grinder"
+            price={29.99}
+            img={imgProduct}
+            rating={5}
+          />
+        </div>
+
+        <div className="home__row">
+          <Product
+            id={6}
             title="Home Grinder"
             price={29.99}
             img={imgProduct}
