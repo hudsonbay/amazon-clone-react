@@ -1,6 +1,8 @@
 # Amazon Clone React application
 
-This project is a React application that connects to an Elixir/Phoenix API in Absinthe GraphQL.
+This project is a React application that connects to an Elixir/Phoenix API in Absinthe GraphQL https://github.com/hudsonbay/commerce-platform-api
+
+See it in production: https://amazon-clone-react-rust.vercel.app/
 
 This was made using React Relay to fetch the data.
 
