@@ -1,8 +1,10 @@
 // Actions
-import { REMOVE_FROM_BASKET, ADD_TO_BASKET } from "./actions";
+import { REMOVE_FROM_BASKET, ADD_TO_BASKET, SET_USER } from "./actions";
 
 export const initialState = {
   basket: [],
+  user: null,
+  loginStatus: false,
 };
 
 // Selector
@@ -11,7 +13,7 @@ export const getBasketTotal = (basket) => {
 };
 
 const reducer = (state, action) => {
-  console.log(action);
+  console.log("action:", action);
   switch (action.type) {
     case ADD_TO_BASKET:
       return {
@@ -35,6 +37,11 @@ const reducer = (state, action) => {
         basket: newBasket,
       };
     }
+    case SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
 
     default:
       return state;

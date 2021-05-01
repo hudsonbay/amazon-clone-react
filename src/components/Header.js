@@ -13,9 +13,20 @@ import { Link } from "react-router-dom";
 
 // Context API
 import { useStateValue } from "../state/StateProvider";
+import { SET_USER } from "../state/actions";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuth = () => {
+    if (user) {
+      // logout
+      dispatch({
+        type: SET_USER,
+        user: null,
+      });
+    }
+  };
 
   return (
     <div className="header">
@@ -29,10 +40,14 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <Link to="/login">
-          <div className="header__option">
-            <span className="header__optionLineOne">Hello Guest</span>
-            <span className="header__optionLineTwo">Sign In</span>
+        <Link to={!user && "/login"}>
+          <div onClick={handleAuth} className="header__option">
+            <span className="header__optionLineOne">
+              Hello, {user ? user.first_name : "Guest"}
+            </span>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
 
