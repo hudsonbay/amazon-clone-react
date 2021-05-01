@@ -9,6 +9,7 @@ import { useStateValue } from "../state/StateProvider";
 import { getBasketTotal } from "../state/reducer";
 
 function Subtotal() {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
 
   return (

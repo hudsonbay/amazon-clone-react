@@ -8,7 +8,8 @@ import { useStateValue } from "../state/StateProvider";
 import { REMOVE_FROM_BASKET } from "../state/actions";
 
 function CheckoutProduct({ id, title, price, img, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+  // eslint-disable-next-line no-empty-pattern
+  const [{}, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
     dispatch({

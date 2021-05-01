@@ -12,6 +12,7 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import { useStateValue } from "../state/StateProvider";
 
 function Checkout() {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket, user }, dispatch] = useStateValue();
 
   return (
