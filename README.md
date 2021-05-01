@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Amazon Clone React application
+
+This project is a React application that connects to an Elixir/Phoenix API in Absinthe GraphQL.
+
+This was made using React Relay to fetch the data.
+
+It uses JWT authentication.
+
+Global state is managed using the Context API from React.js
+
+#
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
