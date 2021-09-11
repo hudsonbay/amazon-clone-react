@@ -10,9 +10,50 @@ It uses JWT authentication.
 
 Global state is managed using the Context API from React.js
 
-#
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Start our React app for development
+`docker-compose -f docker-compose.dev.yml up`
+
+## Build production image
+`docker-compose -f docker-compose.prod.yml build`
+
+Make sure to have `nginx` installed, since it nginx us much more performance and control.
+
+Some `nginx.conf` can look like this:
+```
+server {
+  listen 80;
+
+  location / {
+    root /usr/share/nginx/html/;
+    include /etc/nginx/mime.types;
+    try_files $uri $uri/ /index.html;
+  }
+}
+```
+
+### Optimizing static assets
+You can also add the following inside the `location` block to introduce caching for our static assets and javascript bundle.
+
+You can refer this [guide](https://gist.github.com/philipstanislaus/654adafad91efb6de230845b5bdeae61) to dive deep into optimizing
+
+```
+# Cache static assets
+location ~* \.(?:jpg|jpeg|gif|png|ico|svg)$ {
+  expires 7d;
+  add_header Cache-Control "public";
+}
+
+# Cache css and js bundle
+location ~* \.(?:css|js)$ {
+  add_header Cache-Control "no-cache, public, must-revalidate, proxy-revalidate";
+}
+```
+
+
+## Start our production container on port 80 with the name `amazon-clone-react-app`
+`docker run -p 80:80 --name amazon-clone-react-app amazone-clone-prod`
 
 ## Available Scripts
 
