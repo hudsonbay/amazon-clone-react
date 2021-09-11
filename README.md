@@ -10,9 +10,16 @@ It uses JWT authentication.
 
 Global state is managed using the Context API from React.js
 
-#
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Start our React app for development
+`docker-compose -f docker-compose.dev.yml up`
+
+## Build production image
+`docker-compose -f docker-compose.prod.yml build`
+
+## Start our production container on port 80 with the name `amazon-clone-react-app`
+`docker run -p 80:80 --name amazon-clone-react-app amazone-clone-prod`
 
 ## Available Scripts
 
